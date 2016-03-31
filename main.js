@@ -1,7 +1,8 @@
 var tinify = require('tinify');
 var fs = require('fs');
+var Key = require('./key');
 
-tinify.key = 'qW4HaKZhjU-8DgPLWXQW00IlKdVtJV1d';
+tinify.key = Key.password;
 
 fs.readdir('src/', function (err, files) {
   'use strict';

@@ -6,12 +6,21 @@ tinify.key = Key.password;
 
 fs.readdir('src/', function (err, files) {
   'use strict';
+  
   if (err) {
-    return console.error(err);
+    console.error(err);
   }
 
   files.forEach(function (file) {
-    var source = tinify.fromFile('src/' + file);
-    source.toFile('output/' + file);
+    
+    console.log(file);
+    
+    if (file.charAt(0) !== '.') {
+      var source = tinify.fromFile('src/' + file);
+      source.toFile('output/' + file);
+    } else {
+      console.error("Not a valid image!");
+    }
+    
   });
 });
